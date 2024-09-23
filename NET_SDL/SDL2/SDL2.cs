@@ -221,12 +221,12 @@ namespace SDL2
 		public const int RW_SEEK_CUR = 1;
 		public const int RW_SEEK_END = 2;
 
-		public const UInt32 SDL_RWOPS_UNKNOWN	= 0; /* Unknown stream type */
-		public const UInt32 SDL_RWOPS_WINFILE	= 1; /* Win32 file */
-		public const UInt32 SDL_RWOPS_STDFILE	= 2; /* Stdio file */
-		public const UInt32 SDL_RWOPS_JNIFILE	= 3; /* Android asset */
-		public const UInt32 SDL_RWOPS_MEMORY	= 4; /* Memory stream */
-		public const UInt32 SDL_RWOPS_MEMORY_RO = 5; /* Read-Only memory stream */
+		public const uint SDL_RWOPS_UNKNOWN	= 0; /* Unknown stream type */
+		public const uint SDL_RWOPS_WINFILE	= 1; /* Win32 file */
+		public const uint SDL_RWOPS_STDFILE	= 2; /* Stdio file */
+		public const uint SDL_RWOPS_JNIFILE	= 3; /* Android asset */
+		public const uint SDL_RWOPS_MEMORY	= 4; /* Memory stream */
+		public const uint SDL_RWOPS_MEMORY_RO = 5; /* Read-Only memory stream */
 
 		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		public delegate long SDLRWopsSizeCallback(IntPtr context);
@@ -268,7 +268,7 @@ namespace SDL2
 			public IntPtr write;
 			public IntPtr close;
 
-			public UInt32 type;
+			public uint type;
 
 			/* NOTE: This isn't the full structure since
 			 * the native SDL_RWops contains a hidden union full of
@@ -381,27 +381,27 @@ namespace SDL2
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt16 SDL_ReadLE16(IntPtr src);
+        public static partial ushort SDL_ReadLE16(IntPtr src);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt16 SDL_ReadBE16(IntPtr src);
+        public static partial ushort SDL_ReadBE16(IntPtr src);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_ReadLE32(IntPtr src);
+        public static partial uint SDL_ReadLE32(IntPtr src);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_ReadBE32(IntPtr src);
+        public static partial uint SDL_ReadBE32(IntPtr src);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt64 SDL_ReadLE64(IntPtr src);
+        public static partial ulong SDL_ReadLE64(IntPtr src);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt64 SDL_ReadBE64(IntPtr src);
+        public static partial ulong SDL_ReadBE64(IntPtr src);
 
 		/* Write endian functions */
 
@@ -411,27 +411,27 @@ namespace SDL2
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteLE16(IntPtr dst, UInt16 value);
+        public static partial uint SDL_WriteLE16(IntPtr dst, ushort value);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteBE16(IntPtr dst, UInt16 value);
+        public static partial uint SDL_WriteBE16(IntPtr dst, ushort value);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteLE32(IntPtr dst, UInt32 value);
+        public static partial uint SDL_WriteLE32(IntPtr dst, uint value);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteBE32(IntPtr dst, UInt32 value);
+        public static partial uint SDL_WriteBE32(IntPtr dst, uint value);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteLE64(IntPtr dst, UInt64 value);
+        public static partial uint SDL_WriteLE64(IntPtr dst, ulong value);
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial uint SDL_WriteBE64(IntPtr dst, UInt64 value);
+        public static partial uint SDL_WriteBE64(IntPtr dst, ulong value);
 
 		/* context refers to an SDL_RWops*
 		 * Only available in SDL 2.0.10 or higher.
@@ -5355,7 +5355,7 @@ namespace SDL2
 		public struct SDL_GenericEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
+			public uint timestamp;
 		}
 
 // Ignore private members used for padding in this struct
@@ -5364,13 +5364,13 @@ namespace SDL2
 		public struct SDL_DisplayEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 display;
+			public uint timestamp;
+			public uint display;
 			public SDL_DisplayEventID displayEvent; // event, lolC#
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int32 data1;
+			public int data1;
 		}
 #pragma warning restore 0169
 
@@ -5381,14 +5381,14 @@ namespace SDL2
 		public struct SDL_WindowEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
+			public uint timestamp;
+			public uint windowID;
 			public SDL_WindowEventID windowEvent; // event, lolC#
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int32 data1;
-			public Int32 data2;
+			public int data1;
+			public int data2;
 		}
 #pragma warning restore 0169
 
@@ -5399,8 +5399,8 @@ namespace SDL2
 		public struct SDL_KeyboardEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
+			public uint timestamp;
+			public uint windowID;
 			public byte state;
 			public byte repeat; /* non-zero if this is a repeat */
 			private byte padding2;
@@ -5413,30 +5413,30 @@ namespace SDL2
 		public unsafe struct SDL_TextEditingEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
+			public uint timestamp;
+			public uint windowID;
 			public fixed byte text[SDL_TEXTEDITINGEVENT_TEXT_SIZE];
-			public Int32 start;
-			public Int32 length;
+			public int start;
+			public int length;
 		}
 
 		[StructLayout(LayoutKind.Sequential)]
 		public unsafe struct SDL_TextEditingExtEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
+			public uint timestamp;
+			public uint windowID;
 			public IntPtr text; /* char*, free with SDL_free */
-			public Int32 start;
-			public Int32 length;
+			public int start;
+			public int length;
 		}
 
 		[StructLayout(LayoutKind.Sequential)]
 		public unsafe struct SDL_TextInputEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
+			public uint timestamp;
+			public uint windowID;
 			public fixed byte text[SDL_TEXTINPUTEVENT_TEXT_SIZE];
 		}
 
@@ -5447,17 +5447,17 @@ namespace SDL2
 		public struct SDL_MouseMotionEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
-			public UInt32 which;
+			public uint timestamp;
+			public uint windowID;
+			public uint which;
 			public byte state; /* bitmask of buttons */
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int32 x;
-			public Int32 y;
-			public Int32 xrel;
-			public Int32 yrel;
+			public int x;
+			public int y;
+			public int xrel;
+			public int yrel;
 		}
 #pragma warning restore 0169
 
@@ -5468,15 +5468,15 @@ namespace SDL2
 		public struct SDL_MouseButtonEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
-			public UInt32 which;
+			public uint timestamp;
+			public uint windowID;
+			public uint which;
 			public byte button; /* button id */
 			public byte state; /* SDL_PRESSED or SDL_RELEASED */
 			public byte clicks; /* 1 for single-click, 2 for double-click, etc. */
 			private byte padding1;
-			public Int32 x;
-			public Int32 y;
+			public int x;
+			public int y;
 		}
 #pragma warning restore 0169
 
@@ -5485,12 +5485,12 @@ namespace SDL2
 		public struct SDL_MouseWheelEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
-			public UInt32 which;
-			public Int32 x; /* amount scrolled horizontally */
-			public Int32 y; /* amount scrolled vertically */
-			public UInt32 direction; /* Set to one of the SDL_MOUSEWHEEL_* defines */
+			public uint timestamp;
+			public uint windowID;
+			public uint which;
+			public int x; /* amount scrolled horizontally */
+			public int y; /* amount scrolled vertically */
+			public uint direction; /* Set to one of the SDL_MOUSEWHEEL_* defines */
 			public float preciseX; /* Requires >= 2.0.18 */
 			public float preciseY; /* Requires >= 2.0.18 */
 		}
@@ -5502,14 +5502,14 @@ namespace SDL2
 		public struct SDL_JoyAxisEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte axis;
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int16 axisValue; /* value, lolC# */
-			public UInt16 padding4;
+			public short axisValue; /* value, lolC# */
+			public ushort padding4;
 		}
 #pragma warning restore 0169
 
@@ -5520,14 +5520,14 @@ namespace SDL2
 		public struct SDL_JoyBallEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte ball;
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int16 xrel;
-			public Int16 yrel;
+			public short xrel;
+			public short yrel;
 		}
 #pragma warning restore 0169
 
@@ -5538,8 +5538,8 @@ namespace SDL2
 		public struct SDL_JoyHatEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte hat; /* index of the hat */
 			public byte hatValue; /* value, lolC# */
 			private byte padding1;
@@ -5554,8 +5554,8 @@ namespace SDL2
 		public struct SDL_JoyButtonEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte button;
 			public byte state; /* SDL_PRESSED or SDL_RELEASED */
 			private byte padding1;
@@ -5568,8 +5568,8 @@ namespace SDL2
 		public struct SDL_JoyDeviceEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 		}
 
 // Ignore private members used for padding in this struct
@@ -5579,14 +5579,14 @@ namespace SDL2
 		public struct SDL_ControllerAxisEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte axis;
 			private byte padding1;
 			private byte padding2;
 			private byte padding3;
-			public Int16 axisValue; /* value, lolC# */
-			private UInt16 padding4;
+			public short axisValue; /* value, lolC# */
+			private ushort padding4;
 		}
 #pragma warning restore 0169
 
@@ -5597,8 +5597,8 @@ namespace SDL2
 		public struct SDL_ControllerButtonEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
 			public byte button;
 			public byte state;
 			private byte padding1;
@@ -5611,8 +5611,8 @@ namespace SDL2
 		public struct SDL_ControllerDeviceEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which;	/* joystick id for ADDED,
+			public uint timestamp;
+			public int which;	/* joystick id for ADDED,
 						 * else instance id
 						 */
 		}
@@ -5622,10 +5622,10 @@ namespace SDL2
 		public struct SDL_ControllerTouchpadEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
-			public Int32 touchpad;
-			public Int32 finger;
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
+			public int touchpad;
+			public int finger;
 			public float x;
 			public float y;
 			public float pressure;
@@ -5636,9 +5636,9 @@ namespace SDL2
 		public struct SDL_ControllerSensorEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which; /* SDL_JoystickID */
-			public Int32 sensor;
+			public uint timestamp;
+			public int which; /* SDL_JoystickID */
+			public int sensor;
 			public float data1;
 			public float data2;
 			public float data3;
@@ -5651,8 +5651,8 @@ namespace SDL2
 		public struct SDL_AudioDeviceEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 which;
+			public uint timestamp;
+			public uint which;
 			public byte iscapture;
 			private byte padding1;
 			private byte padding2;
@@ -5664,9 +5664,9 @@ namespace SDL2
 		public struct SDL_TouchFingerEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int64 touchId; // SDL_TouchID
-			public Int64 fingerId; // SDL_GestureID
+			public uint timestamp;
+			public long touchId; // SDL_TouchID
+			public long fingerId; // SDL_GestureID
 			public float x;
 			public float y;
 			public float dx;
@@ -5679,24 +5679,24 @@ namespace SDL2
 		public struct SDL_MultiGestureEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int64 touchId; // SDL_TouchID
+			public uint timestamp;
+			public long touchId; // SDL_TouchID
 			public float dTheta;
 			public float dDist;
 			public float x;
 			public float y;
-			public UInt16 numFingers;
-			public UInt16 padding;
+			public ushort numFingers;
+			public ushort padding;
 		}
 
 		[StructLayout(LayoutKind.Sequential)]
 		public struct SDL_DollarGestureEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int64 touchId; // SDL_TouchID
-			public Int64 gestureId; // SDL_GestureID
-			public UInt32 numFingers;
+			public uint timestamp;
+			public long touchId; // SDL_TouchID
+			public long gestureId; // SDL_GestureID
+			public uint numFingers;
 			public float error;
 			public float x;
 			public float y;
@@ -5709,22 +5709,22 @@ namespace SDL2
 		public struct SDL_DropEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
+			public uint timestamp;
 
 			/* char* filename, to be freed.
 			 * Access the variable EXACTLY ONCE like this:
 			 * string s = SDL.UTF8_ToManaged(evt.drop.file, true);
 			 */
 			public IntPtr file;
-			public UInt32 windowID;
+			public uint windowID;
 		}
 
 		[StructLayout(LayoutKind.Sequential)]
 		public unsafe struct SDL_SensorEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public Int32 which;
+			public uint timestamp;
+			public int which;
 			public fixed float data[6];
 		}
 
@@ -5733,7 +5733,7 @@ namespace SDL2
 		public struct SDL_QuitEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
+			public uint timestamp;
 		}
 
 		/* A user defined event (event.user.*) */
@@ -5741,9 +5741,9 @@ namespace SDL2
 		public struct SDL_UserEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
-			public UInt32 windowID;
-			public Int32 code;
+			public uint timestamp;
+			public uint windowID;
+			public int code;
 			public IntPtr data1; /* user-defined */
 			public IntPtr data2; /* user-defined */
 		}
@@ -5753,7 +5753,7 @@ namespace SDL2
 		public struct SDL_SysWMEvent
 		{
 			public SDL_EventType type;
-			public UInt32 timestamp;
+			public uint timestamp;
 			public IntPtr msg; /* SDL_SysWMmsg*, system-dependent*/
 		}
 
@@ -5987,7 +5987,7 @@ namespace SDL2
 		/* Allocate a set of user-defined events */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_RegisterEvents(int numevents);
+        public static partial uint SDL_RegisterEvents(int numevents);
 		#endregion
 
 		#region SDL_scancode.h
@@ -6588,7 +6588,7 @@ namespace SDL2
 			public SDL_Scancode scancode;
 			public SDL_Keycode sym;
 			public SDL_Keymod mod; /* UInt16 */
-			public UInt32 unicode; /* Deprecated */
+			public uint unicode; /* Deprecated */
 		}
 
 		/* Get the window which has kbd focus */
@@ -6750,32 +6750,32 @@ namespace SDL2
 		/* Get the current state of the mouse */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetMouseState(out int x, out int y);
+        public static partial uint SDL_GetMouseState(out int x, out int y);
 
 		/* Get the current state of the mouse */
 		/* This overload allows for passing NULL to x */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetMouseState(IntPtr x, out int y);
+        public static partial uint SDL_GetMouseState(IntPtr x, out int y);
 
 		/* Get the current state of the mouse */
 		/* This overload allows for passing NULL to y */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetMouseState(out int x, IntPtr y);
+        public static partial uint SDL_GetMouseState(out int x, IntPtr y);
 
 		/* Get the current state of the mouse */
 		/* This overload allows for passing NULL to both x and y */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetMouseState(IntPtr x, IntPtr y);
+        public static partial uint SDL_GetMouseState(IntPtr x, IntPtr y);
 
 		/* Get the current state of the mouse, in relation to the desktop.
 		 * Only available in 2.0.4 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetGlobalMouseState(out int x, out int y);
+        public static partial uint SDL_GetGlobalMouseState(out int x, out int y);
 
 		/* Get the current state of the mouse, in relation to the desktop.
 		 * Only available in 2.0.4 or higher.
@@ -6783,7 +6783,7 @@ namespace SDL2
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetGlobalMouseState(IntPtr x, out int y);
+        public static partial uint SDL_GetGlobalMouseState(IntPtr x, out int y);
 
 		/* Get the current state of the mouse, in relation to the desktop.
 		 * Only available in 2.0.4 or higher.
@@ -6791,7 +6791,7 @@ namespace SDL2
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetGlobalMouseState(out int x, IntPtr y);
+        public static partial uint SDL_GetGlobalMouseState(out int x, IntPtr y);
 
 		/* Get the current state of the mouse, in relation to the desktop.
 		 * Only available in 2.0.4 or higher.
@@ -6799,12 +6799,12 @@ namespace SDL2
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetGlobalMouseState(IntPtr x, IntPtr y);
+        public static partial uint SDL_GetGlobalMouseState(IntPtr x, IntPtr y);
 
 		/* Get the mouse state with relative coords*/
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetRelativeMouseState(out int x, out int y);
+        public static partial uint SDL_GetRelativeMouseState(out int x, out int y);
 
 		/* Set the mouse cursor's position (within a window) */
 		/* window is an SDL_Window pointer */
@@ -6906,11 +6906,11 @@ namespace SDL2
 		public const uint SDL_BUTTON_RIGHT =	3;
 		public const uint SDL_BUTTON_X1 =	4;
 		public const uint SDL_BUTTON_X2 =	5;
-		public static readonly UInt32 SDL_BUTTON_LMASK =	SDL_BUTTON(SDL_BUTTON_LEFT);
-		public static readonly UInt32 SDL_BUTTON_MMASK =	SDL_BUTTON(SDL_BUTTON_MIDDLE);
-		public static readonly UInt32 SDL_BUTTON_RMASK =	SDL_BUTTON(SDL_BUTTON_RIGHT);
-		public static readonly UInt32 SDL_BUTTON_X1MASK =	SDL_BUTTON(SDL_BUTTON_X1);
-		public static readonly UInt32 SDL_BUTTON_X2MASK =	SDL_BUTTON(SDL_BUTTON_X2);
+		public static readonly uint SDL_BUTTON_LMASK =	SDL_BUTTON(SDL_BUTTON_LEFT);
+		public static readonly uint SDL_BUTTON_MMASK =	SDL_BUTTON(SDL_BUTTON_MIDDLE);
+		public static readonly uint SDL_BUTTON_RMASK =	SDL_BUTTON(SDL_BUTTON_RIGHT);
+		public static readonly uint SDL_BUTTON_X1MASK =	SDL_BUTTON(SDL_BUTTON_X1);
+		public static readonly uint SDL_BUTTON_X2MASK =	SDL_BUTTON(SDL_BUTTON_X2);
 
 		#endregion
 
@@ -6967,7 +6967,7 @@ namespace SDL2
 		/* Only available in 2.0.10 or higher. */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial SDL_TouchDeviceType SDL_GetTouchDeviceType(Int64 touchID);
+        public static partial SDL_TouchDeviceType SDL_GetTouchDeviceType(long touchID);
 
 		/* Only available in 2.0.22 or higher. */
 		[LibraryImport(nativeLibName, EntryPoint = "SDL_GetTouchName")]
@@ -7028,9 +7028,9 @@ namespace SDL2
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_JoystickRumble(
 			IntPtr joystick,
-			UInt16 low_frequency_rumble,
-			UInt16 high_frequency_rumble,
-			UInt32 duration_ms
+            ushort low_frequency_rumble,
+            ushort high_frequency_rumble,
+            uint duration_ms
 		);
 
 		/* joystick refers to an SDL_Joystick*.
@@ -7040,9 +7040,9 @@ namespace SDL2
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_JoystickRumbleTriggers(
 			IntPtr joystick,
-			UInt16 left_rumble,
-			UInt16 right_rumble,
-			UInt32 duration_ms
+            ushort left_rumble,
+            ushort right_rumble,
+            uint duration_ms
 		);
 
 		/* joystick refers to an SDL_Joystick* */
@@ -7324,7 +7324,7 @@ namespace SDL2
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_JoystickAttachVirtual(
-			Int32 type,
+            int type,
 			int naxes,
 			int nbuttons,
 			int nhats
@@ -7348,7 +7348,7 @@ namespace SDL2
         public static partial int SDL_JoystickSetVirtualAxis(
 			IntPtr joystick,
 			int axis,
-			Int16 value
+            short value
 		);
 
 		/* IntPtr refers to an SDL_Joystick*.
@@ -7843,9 +7843,9 @@ namespace SDL2
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_GameControllerRumble(
 			IntPtr gamecontroller,
-			UInt16 low_frequency_rumble,
-			UInt16 high_frequency_rumble,
-			UInt32 duration_ms
+            ushort low_frequency_rumble,
+            ushort high_frequency_rumble,
+            uint duration_ms
 		);
 
 		/* gamecontroller refers to an SDL_GameController*.
@@ -7855,9 +7855,9 @@ namespace SDL2
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_GameControllerRumbleTriggers(
 			IntPtr gamecontroller,
-			UInt16 left_rumble,
-			UInt16 right_rumble,
-			UInt32 duration_ms
+            ushort left_rumble,
+            ushort right_rumble,
+            uint duration_ms
 		);
 
 		/* gamecontroller refers to an SDL_GameController* */
@@ -8520,7 +8520,7 @@ namespace SDL2
 
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial Int32 SDL_SensorGetDeviceInstanceID(int device_index);
+        public static partial int SDL_SensorGetDeviceInstanceID(int device_index);
 
 		/* IntPtr refers to an SDL_Sensor* */
 		[LibraryImport(nativeLibName)]
@@ -8531,7 +8531,7 @@ namespace SDL2
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr SDL_SensorFromInstanceID(
-			Int32 instance_id
+            int instance_id
 		);
 
 		/* sensor refers to an SDL_Sensor* */
@@ -8556,7 +8556,7 @@ namespace SDL2
 		/* sensor refers to an SDL_Sensor* */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial Int32 SDL_SensorGetInstanceID(IntPtr sensor);
+        public static partial int SDL_SensorGetInstanceID(IntPtr sensor);
 
 		/* sensor refers to an SDL_Sensor* */
 		[LibraryImport(nativeLibName)]
@@ -8929,7 +8929,7 @@ namespace SDL2
         public static partial int SDL_QueueAudio(
 			uint dev,
 			IntPtr data,
-			UInt32 len
+            uint len
 		);
 
 		/* dev refers to an SDL_AudioDeviceID, data to a void*
@@ -8948,7 +8948,7 @@ namespace SDL2
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetQueuedAudioSize(uint dev);
+        public static partial uint SDL_GetQueuedAudioSize(uint dev);
 
 		/* dev refers to an SDL_AudioDeviceID
 		 * Only available in 2.0.4 or higher.
@@ -9034,47 +9034,47 @@ namespace SDL2
 		/* Compare tick values, return true if A has passed B. Introduced in SDL 2.0.1,
 		 * but does not require it (it was a macro).
 		 */
-		public static bool SDL_TICKS_PASSED(UInt32 A, UInt32 B)
+		public static bool SDL_TICKS_PASSED(uint A, uint B)
 		{
-			return ((Int32)(B - A) <= 0);
+			return ((int)(B - A) <= 0);
 		}
 
 		/* Delays the thread's processing based on the milliseconds parameter */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial void SDL_Delay(UInt32 ms);
+        public static partial void SDL_Delay(uint ms);
 
 		/* Returns the milliseconds that have passed since SDL was initialized */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt32 SDL_GetTicks();
+        public static partial uint SDL_GetTicks();
 
 		/* Returns the milliseconds that have passed since SDL was initialized
 		 * Only available in 2.0.18 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt64 SDL_GetTicks64();
+        public static partial ulong SDL_GetTicks64();
 
 		/* Get the current value of the high resolution counter */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt64 SDL_GetPerformanceCounter();
+        public static partial ulong SDL_GetPerformanceCounter();
 
 		/* Get the count per second of the high resolution counter */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
-        public static partial UInt64 SDL_GetPerformanceFrequency();
+        public static partial ulong SDL_GetPerformanceFrequency();
 
 		/* param refers to a void* */
 		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-		public delegate UInt32 SDL_TimerCallback(UInt32 interval, IntPtr param);
+		public delegate uint SDL_TimerCallback(uint interval, IntPtr param);
 
 		/* int refers to an SDL_TimerID, param to a void* */
 		[LibraryImport(nativeLibName)]
         [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_AddTimer(
-			UInt32 interval,
+            uint interval,
 			SDL_TimerCallback callback,
 			IntPtr param
 		);
