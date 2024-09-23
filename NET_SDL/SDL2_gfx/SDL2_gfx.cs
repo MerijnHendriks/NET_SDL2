@@ -33,7 +33,7 @@ using System.Runtime.InteropServices;
 
 namespace SDL2
 {
-	public static class SDL_gfx
+	public static partial class SDL_gfx
 	{
 		#region SDL2# Variables
 
@@ -50,170 +50,225 @@ namespace SDL2
 		public const uint SDL2_GFXPRIMITIVES_MINOR = 0;
 		public const uint SDL2_GFXPRIMITIVES_MICRO = 1;
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int pixelColor(IntPtr renderer, short x, short y, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int pixelColor(IntPtr renderer, short x, short y, uint color);
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int pixelRGBA(IntPtr renderer, short x, short y, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int pixelRGBA(IntPtr renderer, short x, short y, byte r, byte g, byte b, byte a);
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int hlineColor(IntPtr renderer, short x1, short x2, short y, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int hlineColor(IntPtr renderer, short x1, short x2, short y, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int hlineRGBA(IntPtr renderer, short x1, short x2, short y, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int hlineRGBA(IntPtr renderer, short x1, short x2, short y, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int vlineColor(IntPtr renderer, short x, short y1, short y2, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int vlineColor(IntPtr renderer, short x, short y1, short y2, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int vlineRGBA(IntPtr renderer, short x, short y1, short y2, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int vlineRGBA(IntPtr renderer, short x, short y1, short y2, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int rectangleColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int rectangleColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int rectangleRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int rectangleRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int roundedRectangleColor(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int roundedRectangleColor(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int roundedRectangleRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int roundedRectangleRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int boxColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int boxColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int boxRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int boxRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int roundedBoxColor(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int roundedBoxColor(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int roundedBoxRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int roundedBoxRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short rad, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int lineColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int lineColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int lineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int lineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aalineColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aalineColor(IntPtr renderer, short x1, short y1, short x2, short y2, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aalineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aalineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int thickLineColor(IntPtr renderer, short x1, short y1, short x2, short y2, byte width, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int thickLineColor(IntPtr renderer, short x1, short y1, short x2, short y2, byte width, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int thickLineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte width, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int thickLineRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, byte width, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int circleColor(IntPtr renderer, short x, short y, short rad, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int circleColor(IntPtr renderer, short x, short y, short rad, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int circleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int circleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int arcColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int arcColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int arcRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int arcRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aacircleColor(IntPtr renderer, short x, short y, short rad, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aacircleColor(IntPtr renderer, short x, short y, short rad, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aacircleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aacircleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledCircleColor(IntPtr renderer, short x, short y, short rad, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledCircleColor(IntPtr renderer, short x, short y, short rad, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledCircleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledCircleRGBA(IntPtr renderer, short x, short y, short rad, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int ellipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int ellipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int ellipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int ellipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aaellipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aaellipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aaellipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aaellipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledEllipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledEllipseColor(IntPtr renderer, short x, short y, short rx, short ry, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledEllipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledEllipseRGBA(IntPtr renderer, short x, short y, short rx, short ry, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int pieColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int pieColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int pieRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int pieRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledPieColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledPieColor(IntPtr renderer, short x, short y, short rad, short start, short end, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledPieRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledPieRGBA(IntPtr renderer, short x, short y, short rad, short start, short end, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int trigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int trigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int trigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int trigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aatrigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aatrigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aatrigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aatrigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledTrigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledTrigonColor(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledTrigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledTrigonRGBA(IntPtr renderer, short x1, short y1, short x2, short y2, short x3, short y3, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int polygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int polygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int polygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int polygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aapolygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aapolygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int aapolygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int aapolygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledPolygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledPolygonColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int filledPolygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int filledPolygonRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int texturedPolygon(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, IntPtr texture, int texture_dx, int texture_dy);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int texturedPolygon(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, IntPtr texture, int texture_dx, int texture_dy);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int bezierColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, int s, uint color);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int bezierColor(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, int s, uint color);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int bezierRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, int s, byte r, byte g, byte b, byte a);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int bezierRGBA(IntPtr renderer, [In] short[] vx, [In] short[] vy, int n, int s, byte r, byte g, byte b, byte a);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void gfxPrimitivesSetFont([In] byte[] fontdata, uint cw, uint ch);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void gfxPrimitivesSetFont([In] byte[] fontdata, uint cw, uint ch);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void gfxPrimitivesSetFontRotation(uint rotation);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void gfxPrimitivesSetFontRotation(uint rotation);
 		
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int characterColor(IntPtr renderer, short x, short y, char c, uint color);
@@ -234,29 +289,37 @@ namespace SDL2
 		public const int SMOOTHING_OFF = 0;
 		public const int SMOOTHING_ON = 1;
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr rotozoomSurface(IntPtr src, double angle, double zoom, int smooth);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr rotozoomSurface(IntPtr src, double angle, double zoom, int smooth);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr rotozoomSurfaceXY(IntPtr src, double angle, double zoomx, double zoomy, int smooth);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr rotozoomSurfaceXY(IntPtr src, double angle, double zoomx, double zoomy, int smooth);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void rotozoomSurfaceSize(int width, int height, double angle, double zoom, out int dstwidth, out int dstheight);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void rotozoomSurfaceSize(int width, int height, double angle, double zoom, out int dstwidth, out int dstheight);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void rotozoomSurfaceSizeXY(int width, int height, double angle, double zoomx, double zoomy, out int dstwidth, out int dstheight);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void rotozoomSurfaceSizeXY(int width, int height, double angle, double zoomx, double zoomy, out int dstwidth, out int dstheight);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr zoomSurface(IntPtr src, double zoomx, double zoomy, int smooth);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr zoomSurface(IntPtr src, double zoomx, double zoomy, int smooth);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void zoomSurfaceSize(int width, int height, double zoomx, double zoomy, out int dstwidth, out int dstheight);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void zoomSurfaceSize(int width, int height, double zoomx, double zoomy, out int dstwidth, out int dstheight);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr shrinkSurface(IntPtr src, int factorx, int factory);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr shrinkSurface(IntPtr src, int factorx, int factory);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern IntPtr rotateSurface90Degrees(IntPtr src, int numClockwiseTurns);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial IntPtr rotateSurface90Degrees(IntPtr src, int numClockwiseTurns);
 
 		#endregion
 
@@ -276,114 +339,149 @@ namespace SDL2
 			public uint rate;
 		}
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void SDL_initFramerate(ref FPSmanager manager);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void SDL_initFramerate(ref FPSmanager manager);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_setFramerate(ref FPSmanager manager, uint rate);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_setFramerate(ref FPSmanager manager, uint rate);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_getFramerate(ref FPSmanager manager);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_getFramerate(ref FPSmanager manager);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_getFramecount(ref FPSmanager manager);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_getFramecount(ref FPSmanager manager);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern uint SDL_framerateDelay(ref FPSmanager manager);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial uint SDL_framerateDelay(ref FPSmanager manager);
 
 		#endregion
 
 		#region SDL2_imageFilter.h
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMMXdetect();
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMMXdetect();
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void SDL_imageFilterMMXoff();
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void SDL_imageFilterMMXoff();
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern void SDL_imageFilterMMXon();
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial void SDL_imageFilterMMXon();
 
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterAdd([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterAdd([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMean([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMean([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterSub([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterSub([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterAbsDiff([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterAbsDiff([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMult([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMult([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMultNor([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMultNor([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMultDivby2([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMultDivby2([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMultDivby4([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMultDivby4([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterBitAnd([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterBitAnd([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterBitOr([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterBitOr([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterDiv([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterDiv([In] byte[] src1, [In] byte[] src2, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterBitNegation([In] byte[] src1, [Out] byte[] dest, uint length);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterBitNegation([In] byte[] src1, [Out] byte[] dest, uint length);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterAddByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterAddByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterAddUint([In] byte[] src1, [Out] byte[] dest, uint length, uint c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterAddUint([In] byte[] src1, [Out] byte[] dest, uint length, uint c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterAddByteToHalf([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterAddByteToHalf([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterSubByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterSubByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterSubUint([In] byte[] src1, [Out] byte[] dest, uint length, uint c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterSubUint([In] byte[] src1, [Out] byte[] dest, uint length, uint c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftRight([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftRight([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftRightUint([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftRightUint([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterMultByByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterMultByByte([In] byte[] src1, [Out] byte[] dest, uint length, byte c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftRightAndMultByByte([In] byte[] src1, [Out] byte[] dest, uint length, byte n, byte c);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftRightAndMultByByte([In] byte[] src1, [Out] byte[] dest, uint length, byte n, byte c);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftLeftByte([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftLeftByte([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftLeftUint([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftLeftUint([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterShiftLeft([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterShiftLeft([In] byte[] src1, [Out] byte[] dest, uint length, byte n);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterBinarizeUsingThreshold([In] byte[] src1, [Out] byte[] dest, uint length, byte t);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterBinarizeUsingThreshold([In] byte[] src1, [Out] byte[] dest, uint length, byte t);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterClipToRange([In] byte[] src1, [Out] byte[] dest, uint length, byte tmin, byte tmax);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterClipToRange([In] byte[] src1, [Out] byte[] dest, uint length, byte tmin, byte tmax);
 		
-		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
-		public static extern int SDL_imageFilterNormalizeLinear([In] byte[] src1, [Out] byte[] dest, uint length, int cmin, int cmax, int nmin, int nmax);
+		[LibraryImport(nativeLibName)]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        public static partial int SDL_imageFilterNormalizeLinear([In] byte[] src1, [Out] byte[] dest, uint length, int cmin, int cmax, int nmin, int nmax);
 
 		#endregion
 	}
