@@ -9,4 +9,5 @@ SDL2-CS    | `1eb20e5`   | [link](https://github.com/flibitijibibo/SDL2-CS/tree/
 
 ## Modifications
 
+- Includes PR SDL2-CS#244 ([link](https://github.com/flibitijibibo/SDL2-CS/pull/244))
 - Changed `internal static` to `public static`
