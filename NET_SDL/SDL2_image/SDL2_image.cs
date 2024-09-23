@@ -28,6 +28,7 @@
 
 #region Using Statements
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 #endregion
 
@@ -69,7 +70,7 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_Linked_Version")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_IMG_Linked_Version();
 		public static SDL.SDL_version IMG_Linked_Version()
 		{
@@ -82,16 +83,16 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int IMG_Init(IMG_InitFlags flags);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void IMG_Quit();
 
 		/* IntPtr refers to an SDL_Surface* */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_Load")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_IMG_Load(
 			byte* file
 		);
@@ -108,7 +109,7 @@ namespace SDL2
 		/* src refers to an SDL_RWops*, IntPtr to an SDL_Surface* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr IMG_Load_RW(
 			IntPtr src,
 			int freesrc
@@ -117,7 +118,7 @@ namespace SDL2
 		/* src refers to an SDL_RWops*, IntPtr to an SDL_Surface* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_LoadTyped_RW")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_IMG_LoadTyped_RW(
 			IntPtr src,
 			int freesrc,
@@ -139,7 +140,7 @@ namespace SDL2
 
 		/* IntPtr refers to an SDL_Texture*, renderer to an SDL_Renderer* */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_LoadTexture")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_IMG_LoadTexture(
 			IntPtr renderer,
 			byte* file
@@ -163,7 +164,7 @@ namespace SDL2
 		 */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr IMG_LoadTexture_RW(
 			IntPtr renderer,
 			IntPtr src,
@@ -176,7 +177,7 @@ namespace SDL2
 		 */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_LoadTextureTyped_RW")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_IMG_LoadTextureTyped_RW(
 			IntPtr renderer,
 			IntPtr src,
@@ -202,7 +203,7 @@ namespace SDL2
 
 		/* IntPtr refers to an SDL_Surface* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr IMG_ReadXPMFromArray(
 			[In()] [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.LPStr)]
 				string[] xpm
@@ -210,7 +211,7 @@ namespace SDL2
 
 		/* surface refers to an SDL_Surface* */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_SavePNG")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial int INTERNAL_IMG_SavePNG(
 			IntPtr surface,
 			byte* file
@@ -229,7 +230,7 @@ namespace SDL2
 		/* surface refers to an SDL_Surface*, dst to an SDL_RWops* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int IMG_SavePNG_RW(
 			IntPtr surface,
 			IntPtr dst,
@@ -238,7 +239,7 @@ namespace SDL2
 
 		/* surface refers to an SDL_Surface* */
 		[LibraryImport(nativeLibName, EntryPoint = "IMG_SaveJPG")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial int INTERNAL_IMG_SaveJPG(
 			IntPtr surface,
 			byte* file,
@@ -259,7 +260,7 @@ namespace SDL2
 		/* surface refers to an SDL_Surface*, dst to an SDL_RWops* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int IMG_SaveJPG_RW(
 			IntPtr surface,
 			IntPtr dst,
@@ -299,7 +300,7 @@ namespace SDL2
 		/* IntPtr refers to an IMG_Animation*, src to an SDL_RWops* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr IMG_LoadAnimation_RW(
 			IntPtr src,
 			int freesrc
@@ -317,13 +318,13 @@ namespace SDL2
 
 		/* anim refers to an IMG_Animation* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void IMG_FreeAnimation(IntPtr anim);
 
 		/* IntPtr refers to an IMG_Animation*, src to an SDL_RWops* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr IMG_LoadGIFAnimation_RW(IntPtr src);
 
 		#endregion

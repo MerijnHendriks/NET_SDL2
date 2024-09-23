@@ -28,6 +28,7 @@
 
 #region Using Statements
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 #endregion
 
@@ -75,7 +76,7 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_LinkedVersion")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_TTF_LinkedVersion();
 		public static SDL.SDL_version TTF_LinkedVersion()
 		{
@@ -88,16 +89,16 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_ByteSwappedUNICODE(int swapped);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_Init();
 
 		/* IntPtr refers to a TTF_Font* */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_OpenFont")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_TTF_OpenFont(
 			byte* file,
 			int ptsize
@@ -116,7 +117,7 @@ namespace SDL2
 		/* src refers to an SDL_RWops*, IntPtr to a TTF_Font* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr TTF_OpenFontRW(
 			IntPtr src,
 			int freesrc,
@@ -125,7 +126,7 @@ namespace SDL2
 
 		/* IntPtr refers to a TTF_Font* */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_OpenFontIndex")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_TTF_OpenFontIndex(
 			byte* file,
 			int ptsize,
@@ -149,7 +150,7 @@ namespace SDL2
 		/* src refers to an SDL_RWops*, IntPtr to a TTF_Font* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr TTF_OpenFontIndexRW(
 			IntPtr src,
 			int freesrc,
@@ -161,7 +162,7 @@ namespace SDL2
 		 * Only available in 2.0.16 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_SetFontSize(
 			IntPtr font,
 			int ptsize
@@ -169,79 +170,79 @@ namespace SDL2
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontStyle(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_SetFontStyle(IntPtr font, int style);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontOutline(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_SetFontOutline(IntPtr font, int outline);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontHinting(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_SetFontHinting(IntPtr font, int hinting);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_FontHeight(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_FontAscent(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_FontDescent(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_FontLineSkip(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontKerning(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_SetFontKerning(IntPtr font, int allowed);
 
 		/* font refers to a TTF_Font*.
 		 * IntPtr is actually a C long! This ignores Win64!
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr TTF_FontFaces(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_FontFaceIsFixedWidth(IntPtr font);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_FontFaceFamilyName")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_TTF_FontFaceFamilyName(
 			IntPtr font
 		);
@@ -254,7 +255,7 @@ namespace SDL2
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_FontFaceStyleName")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_TTF_FontFaceStyleName(
 			IntPtr font
 		);
@@ -267,19 +268,19 @@ namespace SDL2
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GlyphIsProvided(IntPtr font, ushort ch);
 
 		/* font refers to a TTF_Font*
 		 * Only available in 2.0.16 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GlyphIsProvided32(IntPtr font, uint ch);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GlyphMetrics(
 			IntPtr font,
 			ushort ch,
@@ -294,7 +295,7 @@ namespace SDL2
 		 * Only available in 2.0.16 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GlyphMetrics32(
 			IntPtr font,
 			uint ch,
@@ -317,7 +318,7 @@ namespace SDL2
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_SizeUTF8")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static unsafe partial int INTERNAL_TTF_SizeUTF8(
 			IntPtr font,
 			byte* text,
@@ -368,7 +369,7 @@ namespace SDL2
 		 * Only available in 2.0.16 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "TTF_MeasureUTF8")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static unsafe partial int INTERNAL_TTF_MeasureUTF8(
 			IntPtr font,
 			byte* text,
@@ -739,30 +740,30 @@ namespace SDL2
 
 		/* Only available in 2.0.16 or higher. */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_SetDirection(int direction);
 
 		/* Only available in 2.0.16 or higher. */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_SetScript(int script);
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_CloseFont(IntPtr font);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void TTF_Quit();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_WasInit();
 
 		/* font refers to a TTF_Font* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int SDL_GetFontKerningSize(
 			IntPtr font,
 			int prev_index,
@@ -773,7 +774,7 @@ namespace SDL2
 		 * Only available in 2.0.15 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontKerningSizeGlyphs(
 			IntPtr font,
 			ushort previous_ch,
@@ -784,7 +785,7 @@ namespace SDL2
 		 * Only available in 2.0.16 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int TTF_GetFontKerningSizeGlyphs32(
 			IntPtr font,
 			ushort previous_ch,

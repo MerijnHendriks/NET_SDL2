@@ -28,6 +28,7 @@
 
 #region Using Statements
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 #endregion
 
@@ -146,7 +147,7 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName, EntryPoint = "MIX_Linked_Version")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_MIX_Linked_Version();
 		public static SDL.SDL_version MIX_Linked_Version()
 		{
@@ -159,15 +160,15 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_Init(MIX_InitFlags flags);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_Quit();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_OpenAudio(
 			int frequency,
 			ushort format,
@@ -176,11 +177,11 @@ namespace SDL2
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_AllocateChannels(int numchans);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_QuerySpec(
 			out int frequency,
 			out ushort format,
@@ -190,7 +191,7 @@ namespace SDL2
 		/* src refers to an SDL_RWops*, IntPtr to a Mix_Chunk* */
 		/* THIS IS A PUBLIC RWops FUNCTION! */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr Mix_LoadWAV_RW(
 			IntPtr src,
 			int freesrc
@@ -206,7 +207,7 @@ namespace SDL2
 
 		/* IntPtr refers to a Mix_Music* */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_LoadMUS")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial IntPtr INTERNAL_Mix_LoadMUS(
 			byte* file
 		);
@@ -222,7 +223,7 @@ namespace SDL2
 
 		/* IntPtr refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr Mix_QuickLoad_WAV(
 			[In()] [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U1)]
 				byte[] mem
@@ -230,7 +231,7 @@ namespace SDL2
 
 		/* IntPtr refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr Mix_QuickLoad_RAW(
 			[In()] [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U1, SizeParamIndex = 1)]
 				byte[] mem,
@@ -239,20 +240,20 @@ namespace SDL2
 
 		/* chunk refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_FreeChunk(IntPtr chunk);
 
 		/* music refers to a Mix_Music* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_FreeMusic(IntPtr music);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GetNumChunkDecoders();
 
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetChunkDecoder")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_Mix_GetChunkDecoder(int index);
 		public static string Mix_GetChunkDecoder(int index)
 		{
@@ -262,11 +263,11 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GetNumMusicDecoders();
 
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicDecoder")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_Mix_GetMusicDecoder(int index);
 		public static string Mix_GetMusicDecoder(int index)
 		{
@@ -277,14 +278,14 @@ namespace SDL2
 
 		/* music refers to a Mix_Music* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial Mix_MusicType Mix_GetMusicType(IntPtr music);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicTitle")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetMusicTitle(IntPtr music);
 		public static string Mix_GetMusicTitle(IntPtr music)
 		{
@@ -297,7 +298,7 @@ namespace SDL2
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicTitleTag")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetMusicTitleTag(IntPtr music);
 		public static string Mix_GetMusicTitleTag(IntPtr music)
 		{
@@ -310,7 +311,7 @@ namespace SDL2
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicArtistTag")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetMusicArtistTag(IntPtr music);
 		public static string Mix_GetMusicArtistTag(IntPtr music)
 		{
@@ -323,7 +324,7 @@ namespace SDL2
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicAlbumTag")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetMusicAlbumTag(IntPtr music);
 		public static string Mix_GetMusicAlbumTag(IntPtr music)
 		{
@@ -336,7 +337,7 @@ namespace SDL2
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetMusicCopyrightTag")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetMusicCopyrightTag(IntPtr music);
 		public static string Mix_GetMusicCopyrightTag(IntPtr music)
 		{
@@ -346,38 +347,38 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_SetPostMix(
 			MixFuncDelegate mix_func,
 			IntPtr arg // void*
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_HookMusic(
 			MixFuncDelegate mix_func,
 			IntPtr arg // void*
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_HookMusicFinished(
 			MusicFinishedDelegate music_finished
 		);
 
 		/* IntPtr refers to a void* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr Mix_GetMusicHookData();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_ChannelFinished(
 			ChannelFinishedDelegate channel_finished
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_RegisterEffect(
 			int chan,
 			Mix_EffectFunc_t f,
@@ -386,18 +387,18 @@ namespace SDL2
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_UnregisterEffect(
 			int channel,
 			Mix_EffectFunc_t f
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_UnregisterAllEffects(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetPanning(
 			int channel,
 			byte left,
@@ -405,7 +406,7 @@ namespace SDL2
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetPosition(
 			int channel,
 			short angle,
@@ -413,39 +414,39 @@ namespace SDL2
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetDistance(int channel, byte distance);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetReverseStereo(int channel, int flip);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_ReserveChannels(int num);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupChannel(int which, int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupChannels(int from, int to, int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupAvailable(int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupCount(int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupOldest(int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GroupNewer(int tag);
 
 		/* chunk refers to a Mix_Chunk* */
@@ -459,7 +460,7 @@ namespace SDL2
 
 		/* chunk refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_PlayChannelTimed(
 			int channel,
 			IntPtr chunk,
@@ -469,12 +470,12 @@ namespace SDL2
 
 		/* music refers to a Mix_Music* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_PlayMusic(IntPtr music, int loops);
 
 		/* music refers to a Mix_Music* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeInMusic(
 			IntPtr music,
 			int loops,
@@ -483,7 +484,7 @@ namespace SDL2
 
 		/* music refers to a Mix_Music* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeInMusicPos(
 			IntPtr music,
 			int loops,
@@ -503,7 +504,7 @@ namespace SDL2
 
 		/* chunk refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeInChannelTimed(
 			int channel,
 			IntPtr chunk,
@@ -513,141 +514,141 @@ namespace SDL2
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_Volume(int channel, int volume);
 
 		/* chunk refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_VolumeChunk(
 			IntPtr chunk,
 			int volume
 		);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_VolumeMusic(int volume);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GetVolumeMusicStream(IntPtr music);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_HaltChannel(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_HaltGroup(int tag);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_HaltMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_ExpireChannel(int channel, int ticks);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeOutChannel(int which, int ms);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeOutGroup(int tag, int ms);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_FadeOutMusic(int ms);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial Mix_Fading Mix_FadingMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial Mix_Fading Mix_FadingChannel(int which);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_Pause(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_Resume(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_Paused(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_PauseMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_ResumeMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_RewindMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_PausedMusic();
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetMusicPosition(double position);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial double Mix_GetMusicPosition(IntPtr music);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial double Mix_MusicDuration(IntPtr music);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial double Mix_GetMusicLoopStartTime(IntPtr music);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial double Mix_GetMusicLoopEndTime(IntPtr music);
 
 		/* music refers to a Mix_Music*
 		 * Only available in 2.0.5 or higher.
 		 */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial double Mix_GetMusicLoopLengthTime(IntPtr music);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_Playing(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_PlayingMusic();
 
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_SetMusicCMD")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial int INTERNAL_Mix_SetMusicCMD(
 			byte* command
 		);
@@ -662,15 +663,15 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_SetSynchroValue(int value);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_GetSynchroValue();
 
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_SetSoundFonts")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static unsafe partial int INTERNAL_Mix_SetSoundFonts(
 			byte* paths
 		);
@@ -685,7 +686,7 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetSoundFonts")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         private static partial IntPtr INTERNAL_Mix_GetSoundFonts();
 		public static string Mix_GetSoundFonts()
 		{
@@ -695,7 +696,7 @@ namespace SDL2
 		}
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial int Mix_EachSoundFont(
 			SoundFontDelegate function,
 			IntPtr data // void*
@@ -710,7 +711,7 @@ namespace SDL2
 
 		/* Only available in 2.0.5 or later. */
 		[LibraryImport(nativeLibName, EntryPoint = "Mix_GetTimidityCfg")]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr INTERNAL_Mix_GetTimidityCfg();
 		public static string Mix_GetTimidityCfg()
 		{
@@ -721,11 +722,11 @@ namespace SDL2
 
 		/* IntPtr refers to a Mix_Chunk* */
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial IntPtr Mix_GetChunk(int channel);
 
 		[LibraryImport(nativeLibName)]
-        [UnmanagedCallConv(CallConvs = new Type[] { typeof(System.Runtime.CompilerServices.CallConvCdecl) })]
+        [UnmanagedCallConv(CallConvs = new Type[] { typeof(CallConvCdecl) })]
         public static partial void Mix_CloseAudio();
 
 		public static string Mix_GetError()
